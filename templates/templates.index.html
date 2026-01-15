@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ABC Dim Sum POS</title>
+    <style>
+        body { font-family: Arial; text-align: center; }
+        .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 20px; }
+        .lunch-item { border: 1px solid #ccc; padding: 10px; }
+        input { width: 50px; }
+    </style>
+</head>
+<body>
+    <h1>ABC Dim Sum Restaurant</h1>
+
+    <div class="menu-grid">
+        {% for item in menu_items %}
+        <div class="lunch-item">
+            <strong>{{ item.LunchName }}</strong> - ${{ item.LunchPrice }} (Quota left: {{ item.Quota }})
+            <br>
+            Quantity: <input type="number" name="qty_{{ item.LunchID }}" min="0" value="0">
+        </div>
+        {% endfor %}
+    </div>
+
+    <h3>Table Number: <input type="text" name="table_id" placeholder="e.g. T1"></h3>
+    <p>Number of lunch sets available: {{ available_count }} tables free</p>
+
+    <button type="submit">Confirm</button>
+    <button type="button">Cancel</button>
+
+    <!-- Add your other features here -->
+</body>
+</html>
