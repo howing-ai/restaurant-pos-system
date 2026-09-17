@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ABC Dim Sum Restaurant · POS</title>
+    <link rel="icon" href="/favicon.ico" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="topbar">
+        <div class="brand">
+            <span class="logo">點</span>
+            <div>
+                <h1>ABC Dim Sum Restaurant</h1>
+                <p>Point-of-Sale &amp; Allergy-Safe Ordering</p>
+            </div>
+        </div>
+        <div id="userArea"></div>
+    </header>
+
+    <nav id="tabs"></nav>
+
+    <main id="app"></main>
+
+    <div id="toast"></div>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-card">
+            <button class="modal-close" data-action="close-modal" title="Close">&times;</button>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
