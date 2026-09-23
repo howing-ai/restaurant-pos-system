@@ -81,6 +81,8 @@ const loadMenu = async () => { state.menu = await api("/menu"); };
 const loadTables = async () => { state.tables = await api("/tables"); };
 
 async function loadOrders() {
+    // anonymous diner with no saved profile yet -> simply nothing to list
+    if (!state.token && !state.guestId) { state.orders = []; return; }
     const query = state.token ? "" : "?guest_id=" + state.guestId;
     state.orders = await api("/orders" + query);
 }
